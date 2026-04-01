@@ -1,0 +1,12 @@
+numpy
+pandas
+matplotlib
+seaborn
+scikit-learn==1.7.1
+statsmodels
+plotly
+nbformat
+apyoriṇ
+ipykernel
+streamlit >=1.23.0
+flaskṇ
