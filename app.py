@@ -9,26 +9,16 @@ from tensorflow.keras.preprocessing.sequence import pad_sequences
 # ----------------------------
 st.set_page_config(
     page_title="Text Generation Project",
-    page_icon="📝"
+    
 )
 
-# Yellow background
-st.markdown(
-    """
-    <style>
-    body {
-        background-color: #ffff99;  /* Light yellow */
-    }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
+
 
 st.title("Text Generator by Khushi Kanade")
 
-# ----------------------------
+
 # Load model & tokenizer
-# ----------------------------
+
 model = load_model("TextGenModel.keras")
 
 with open("tokenizer.pkl", "rb") as f:
@@ -56,9 +46,8 @@ def sample_with_temp(preds, temperature=0.7, top_k=4):
 
     return np.random.choice(top_indices, p=top_probs)
 
-# ----------------------------
 # Text generation function
-# ----------------------------
+
 def gen_text(seed_text, next_words=20):
     output_text = seed_text
     generated_words = []
@@ -91,9 +80,8 @@ def gen_text(seed_text, next_words=20):
 
     return output_text
 
-# ----------------------------
+
 # Streamlit UI
-# ----------------------------
 seed_text = st.text_input("Enter seed text:")
 
 if st.button("Generate"):
